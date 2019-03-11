@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include "spiu.h"
+#include "spi_user.h"
 
 static const char	*spiDev0 = SPI_DEVICE0;
 static const char	*spiDev1 = SPI_DEVICE1;
@@ -40,11 +40,13 @@ int spi_init(int channel){
 	int MODE = SPI_MODE_DEFINE;
 	int BPW = SPI_BPW_DEFINE;
 	int SPEED = SPI_SPEED_DEFINE;
-	
-	if( fd = open(channel == 0 ? spiDev0 : spiDev1, O_RDWR) < 0 ){
+
+	fd = open((channel == 0 ? spiDev0 : spiDev1), O_RDWR);
+	if(-1 == fd){
 		printf("Unable to open SPI device: %s\n",strerror(errno));
-		return -1;
+		return fd;
 	}
+	printf("Channel %d @ FD %d\n",channel,fd);
 	spifds[channel] = fd;
 
 /////////////////////////////

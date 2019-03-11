@@ -20,8 +20,10 @@ CHECKDIR:ECHO
 	@mkdir -p bin
 
 ECHO:
-	@echo Find Dirs "$(SUBDIRS)".
+	@echo  
+	@echo Find Dirs : $(SUBDIRS)
 	@echo Now start compile!
+	@echo  
 
 clean:
 	@for dir in $(SUBDIRS);\
