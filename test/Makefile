@@ -1,14 +1,13 @@
 include ../include/top.mk
 
-CFLAGS:= -I ../include
-BUILD_DIR:=../build_dir
+CFLAGS:=-I ../include
+BUILD_DIR=../build_dir
 SOURCE:=$(wildcard *.c)
-TARGET:=$(notdir $(SOURCE))
-TARGET:=$(patsubst %.c,%.o,$(TARGET))
+TARGET:=$(patsubst %.c,%.o,$(SOURCE))
 
 all:$(TARGET)
 
-$(TARGET):$(SOURCE)
+$(TARGET):%.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $(BUILD_DIR)/$@
 
 clean:

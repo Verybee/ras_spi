@@ -1,11 +1,15 @@
 /////////////////////////////////////////////////
-// This Fire Build by Ray Wang 
+// This File Built by Ray Wang 
 // 2019.03.05 Version 0.1
 /////////////////////////////////////////////////
 
 #include <stdio.h>
+#include <stdint.h>
 #include <errno.h>
 #include <string.h>
+#include <linux/spi/spidev.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
 #include "spi_user.h"
 
 static const char	*spiDev0 = SPI_DEVICE0;
@@ -17,7 +21,7 @@ static int		spifds[2];
  *	read and write data from user,only for 8bits.
  *	This is a full-duplex operation
  *******************************************************************/
-int spi_data_rw(int channel, unsigned char *tx_data, unsigned char *rx_data, int len){
+int spi_data_rw(uint8_t channel, uint8_t *tx_data, uint8_t *rx_data, uint8_t len){
 	struct spi_ioc_transfer spi_tr ;
 	memset(&spi_tr, 0, sizeof(spi_tr));
 
@@ -35,18 +39,18 @@ int spi_data_rw(int channel, unsigned char *tx_data, unsigned char *rx_data, int
  *spi_init 
  *	open spi device and setup it with the parameter from spi.h
  ********************************************************************/
-int spi_init(int channel){
+int spi_init(uint8_t channel){
 	int fd;
 	int MODE = SPI_MODE_DEFINE;
 	int BPW = SPI_BPW_DEFINE;
 	int SPEED = SPI_SPEED_DEFINE;
 
 	fd = open((channel == 0 ? spiDev0 : spiDev1), O_RDWR);
-	if(-1 == fd){
+	if(fd < 0){
 		printf("Unable to open SPI device: %s\n",strerror(errno));
-		return fd;
+		return -1;
 	}
-	printf("Channel %d @ FD %d\n",channel,fd);
+	printf("SPI Channel %d open @ %d\n",channel,fd);
 	spifds[channel] = fd;
 
 /////////////////////////////

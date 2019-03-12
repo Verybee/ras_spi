@@ -5,9 +5,10 @@ BUILD_DIR=../build_dir
 SOURCE:=$(wildcard *.c)
 TARGET:=$(patsubst %.c,%.o,$(SOURCE))
 
-$(TARGET):$(SOURCE)
+all:$(TARGET)
+
+$(TARGET):%.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $(BUILD_DIR)/$@
 
-all:$(TARGET)
 clean:
 	-$(RM) $(BUILD_DIR)/$(TARGET)
