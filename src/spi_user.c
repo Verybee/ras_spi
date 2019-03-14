@@ -21,7 +21,7 @@ static int		spifds[2];
  *	read and write data from user,only for 8bits.
  *	This is a full-duplex operation
  *******************************************************************/
-int spi_data_rw(uint8_t channel, uint8_t *tx_data, uint8_t *rx_data, uint8_t len){
+int spi_data_rw(uint8_t channel, uint8_t *tx_data, uint8_t *rx_data, uint16_t len){
 	struct spi_ioc_transfer spi_tr ;
 	memset(&spi_tr, 0, sizeof(spi_tr));
 

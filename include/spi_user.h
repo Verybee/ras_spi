@@ -14,7 +14,14 @@
 #define ZK			1
 #define OLED			0
 
+/*********************************************************
+ * spi_init(u8 channel)
+ *********************************************************/
 int spi_init(uint8_t);
-int spi_data_rw(uint8_t, uint8_t *, uint8_t *, uint8_t);
+
+/***************************************************************
+ * spi_data_rw(u8 channel, u8 *tx_buf, u8 *rx_buf, u16 len)
+ ***************************************************************/
+int spi_data_rw(uint8_t, uint8_t *, uint8_t *, uint16_t);
 
 #endif

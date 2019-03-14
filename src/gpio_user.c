@@ -63,6 +63,6 @@ int gpio_init(){
 		return -1;
 	}
 	gpiofd = gpio_tr.fd;
-	printf("GPIO open @ %d\n",gpiofd);
+	printf("GPIO handle open @ %d\n",gpiofd);
 	return 0;
 }

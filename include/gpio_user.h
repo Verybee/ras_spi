@@ -10,7 +10,12 @@
 #define DC		17
 #define RES		18
 
+
 int gpio_init();
+
+/******************************************
+ * gpio_rw(u8 pin, u8 status)
+ ******************************************/
 int gpio_rw(uint8_t, uint8_t);
 
 #endif

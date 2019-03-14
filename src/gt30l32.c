@@ -30,7 +30,7 @@ int read_gt30l32(uint8_t *tx_data, uint8_t *rx_data, uint8_t data_bits){
 	sprintf(addr, "%c", READ_COM);
 	memmove(addr+1,tx_data,3);
 	len = data_bits + 4;
-	spi_data_rw(ZK, addr, data, len) - 4;
+	spi_data_rw(ZK, addr, data, len);
 
 // Write Function
 	memmove(rx_data, data+4, data_bits);
