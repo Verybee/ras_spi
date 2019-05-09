@@ -1,7 +1,7 @@
 #ifndef __GPIOU_H
 #define __GPIOU_H
 ///////////////////////////////////////////
-// This File Built by Ray Wang
+// This File Built by Rey Wang
 // 2019.03.12 Version 0.1
 ///////////////////////////////////////////
 #include <stdint.h>

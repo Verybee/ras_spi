@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////
-// This File Built by Ray Wang
+// This File Built by Rey Wang
 // 2019.03.13 Version 0.1
 //
 /////////////////////////////////////////////////
@@ -90,7 +90,7 @@ int ssd1325_init(){
 	error_flag += ssd1325_send_command(SET_DO,comdata); // Set display offset
 	comdata[0] = 0x00;
 	error_flag += ssd1325_send_command(SET_DSL,comdata); // Set display start line
-	comdata[0] = 0x50;
+	comdata[0] = 0x52;
 	error_flag += ssd1325_send_command(SET_RE,comdata); // Set Re-Map
 
 	// Other configure

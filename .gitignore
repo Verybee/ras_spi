@@ -53,3 +53,8 @@ dkms.conf
 
 # vi swp files
 *.swp
+
+# vscode files
+.vscode
+arm-tools-chain
+build_dir

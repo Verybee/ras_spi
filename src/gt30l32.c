@@ -1,5 +1,5 @@
 ///////////////////////////////////////////
-// This File Built by Ray Wang
+// This File Built by Rey Wang
 // 2019.03.12 Version 0.1
 ///////////////////////////////////////////
 
@@ -17,7 +17,7 @@
  * 	rx_data --> data from gt30l32
  **********************************************/
 int read_gt30l32(uint8_t *tx_data, uint8_t *rx_data, uint8_t data_bits){
-	uint8_t addr[36];
+	uint8_t addr[72];
 	uint8_t data[36];
 	uint8_t len;
 	uint8_t cont;
@@ -38,9 +38,9 @@ int read_gt30l32(uint8_t *tx_data, uint8_t *rx_data, uint8_t data_bits){
 }
 
 /*************************************************
- * transform_word
+ * transform_word 8x16
  * 	transform a word to OLED data
- *
+ *	
  * 	word --> an ASCII word
  * 	buf  --> a buffer of OLED datas
  *************************************************/
@@ -58,7 +58,7 @@ uint32_t transform_word(unsigned char word, uint8_t *buf){
 	
 	memset(buf,0,sizeof(uint8_t)*16);
 	read_gt30l32(addr, buf, 16);
-	return tmp_addr;
+	return 0;
 }
 
 /*************************************************
@@ -67,7 +67,7 @@ uint32_t transform_word(unsigned char word, uint8_t *buf){
  *
  * 	word --> a chinese word(two bytes)
  * 	buf  --> a buffer of OLED data
- *************************************************/
+ *************************************************//*
 uint32_t transform_GB(unsigned char *word, uint8_t *buf){
 	uint8_t addr[3];
 	uint32_t tmp_addr=0;
@@ -88,4 +88,4 @@ uint32_t transform_GB(unsigned char *word, uint8_t *buf){
 	
 	read_gt30l32(addr, buf, 32);
 	return tmp_addr;
-}
+}*/

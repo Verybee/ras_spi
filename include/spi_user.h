@@ -1,7 +1,7 @@
 #ifndef __SPIU_H
 #define __SPIU_H
 /////////////////////////////////////////////////
-// This File Built by Ray Wang 
+// This File Built by Rey Wang 
 // 2019.03.05 Version 0.1
 /////////////////////////////////////////////////
 #include <stdint.h>

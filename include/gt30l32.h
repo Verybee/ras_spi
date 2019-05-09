@@ -12,6 +12,6 @@
 
 int read_gt30l32(uint8_t *, uint8_t *, uint8_t);
 uint32_t transform_word(unsigned char, uint8_t *);
-uint32_t transform_GB(unsigned char *, uint8_t *);
+//uint32_t transform_GB(unsigned char *, uint8_t *);
 
 #endif

@@ -3,21 +3,21 @@ include include/top.mk
 TOPDIR := ${CURDIR}
 SUBDIRS := src \
            test
-TARGET := spi_test.exe
+TARGET := test.bin
 BUILD_DIR := build_dir
-BIN_DIR := bin
+BIN_DIR := $(BUILD_DIR)
+CFLAGS := $(USER_CONFIG)
 
 all:$(TARGET)
 
 $(TARGET):$(SUBDIRS)
-	$(CC) $(BUILD_DIR)/*.o -o $(BIN_DIR)/$@
+	$(CC) $(CFLAGS) $(BUILD_DIR)/*.o -o $(BIN_DIR)/$@
 
 $(SUBDIRS):CHECKDIR
 	@$(MAKE) -C $@ all || exit 1;
 
 CHECKDIR:ECHO
 	@mkdir -p build_dir
-	@mkdir -p bin
 
 ECHO:
 	@echo [INFO] Find Dirs : $(SUBDIRS)

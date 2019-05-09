@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////
-// This File Built by Ray Wang 
+// This File Built by Rey Wang 
 // 2019.03.05 Version 0.1
 /////////////////////////////////////////////////
 
@@ -89,6 +89,6 @@ int spi_init(uint8_t channel){
 		return -1;
 	}
 
-	return fd;
+	return 0;
 }
 

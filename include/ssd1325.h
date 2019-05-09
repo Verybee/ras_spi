@@ -1,7 +1,7 @@
 #ifndef __SSD1325_H
 #define __SSD1325_H
 ///////////////////////////////////////////
-// This File Built by Ray Wang
+// This File Built by Rey Wang
 // 2019.03.12 Version 0.1
 ///////////////////////////////////////////
 #include <stdint.h>
@@ -77,7 +77,7 @@ static uint8_t display_buffer[1024];
 int ssd1325_send_command(uint8_t, uint8_t, uint8_t *);
 
 /**********************************************************************
- * ssd1325_flash();
+ * ssd1325_flash(uint8_t *buf);
  * 	Send display_buffer to OLED
  **********************************************************************/
 int ssd1325_flash(uint8_t *);

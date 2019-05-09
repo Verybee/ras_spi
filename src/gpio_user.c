@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////
-// This File Built by Ray Wang
+// This File Built by Rey Wang
 // 2019.03.13 Version 0.1
 //
 //  +-----Interface with M270_ZK OLED-----+
@@ -48,7 +48,7 @@ int gpio_init(){
 	fd = open(gpioDev, O_RDWR);
 	if( fd < 0){
 		printf("Unable to open GPIO: %s\n",strerror(errno));
-		return fd;
+		return -1;
 	}
 
 	gpio_tr.lineoffsets[0] = DC;
